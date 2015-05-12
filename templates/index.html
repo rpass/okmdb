@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Olivia King's Movie Database</title>
+</head>
+<body>
+<h1>Welcome to O.K.MDb!</h1>
+<h3>Where Olivia tells us what is kak and what is lekker.</h3>
+<p><b>The following movies have already been reviewed</b></p>
+<div>
+	<ul>
+		<li>
+			<a href="{{url_for('createreview')}}">New Review</a>
+		</li>
+	</ul>
+</div>
+<div>
+	<ul>
+	{% for movie in movies %}
+	<li><a href="{{url_for('reviews', movie_id=movie.id)}}">{{movie.name}}</a></li>
+	{% endfor %}
+</div>
+
+</body>
+</html>
